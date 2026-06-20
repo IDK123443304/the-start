@@ -2,281 +2,327 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Coookin</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box; 
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Coookin | Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        body {
-            background: #cbcbcb;
-            color: #222;
-        }
+    body {
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, .6), transparent 35%),
+        linear-gradient(180deg, #d0d0d0 0%, #cbcbcb 100%);
+      color: #222;
+    }
 
-        header {
-            position: sticky;
-            z-index: 1000;
-            top: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 30px;
-            background: linear-gradient(135deg, #000000, rgb(101, 101, 101), rgb(212, 210, 210));
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-            color: white;
-            flex-wrap: wrap;
-            gap: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            width: 100%;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 30px;
+      background: linear-gradient(135deg, #000, #656565, #d4d2d2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      color: white;
+      flex-wrap: wrap;
+    }
 
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    header h1 {
+      font-size: 28px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+    }
 
-        header nav a {
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            padding: 10px 14px;
-            border-radius: 10px;
-            transition: 0.3s ease;
-        }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-        header nav a:hover {
-            background: rgba(255, 255, 255, 0.18);
-        }
+    header nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
 
-       
-        .layout {
-            display: flex;
-            gap: 25px;
-            padding: 25px;
-            align-items: flex-start;
-        }
+    header nav a:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
 
-        aside {
-            width: 270px;
-            background: #000000;
-            padding: 20px;
-            border-radius: 18px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 90px; 
-            color: white;
-        }
+    .hero {
+      margin: 20px;
+      min-height: 320px;
+      border-radius: 22px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 24px;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+    }
 
-        aside h2 {
-            font-size: 22px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        }
+    .hero h2 {
+      font-size: clamp(34px, 5vw, 60px);
+      margin-bottom: 12px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
 
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    .hero p {
+      font-size: clamp(17px, 2vw, 20px);
+      max-width: 700px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
 
-        .menu a {
-            text-decoration: none;
-            color: white;
-            background: #1f1f1f;
-            padding: 14px 16px;
-            border-radius: 14px;
-            transition: 0.3s ease;
-        }
+    .layout {
+      padding: 25px;
+    }
 
-        .menu a:hover {
-            background: rgb(106, 106, 106);
-            transform: translateX(5px);
-        }
+    .section-title {
+      margin-bottom: 18px;
+      font-size: 36px;
+      font-family: "Franklin Gothic Medium", Arial, sans-serif;
+      color: #111;
+      position: relative;
+    }
 
-        main {
-            flex: 1;
-        }
-        
-        #recipeGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            width: 100%;
-        }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 4px;
+      margin-top: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #111, #777);
+    }
 
-        .card {
-            background: #ffffff;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            position: relative; 
-        }
+    #recipeGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 24px 45px rgba(15, 23, 42, 0.18);
-        }
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
+    .card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 26px 50px rgba(15, 23, 42, 0.2);
+    }
 
-        .card-content {
-            padding: 20px;
-        }
+    .card-image {
+      height: 230px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.35s ease;
+    }
 
-        .card-content h3 {
-            margin-bottom: 8px;
-            font-size: 20px;
-        }
+    .card:hover .card-image {
+      transform: scale(1.05);
+    }
 
-        .card-content p {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
-        }
+    .corner-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(0, 0, 0, 0.78);
+      color: white;
+      padding: 7px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      z-index: 10;
+    }
 
-        
-        .corner-badge {
-            position: absolute;
-            top: 15px;
-            background: rgba(0, 0, 0, 0.75);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            z-index: 10;
-        }
-        
-        .top-left { 
-            left: 15px; 
-        }
+    .card-content {
+      padding: 22px;
+    }
 
-        .arrow-btn {
-            background: #1f1f1f;
-            color: white;
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            margin: 15px 0 0 auto;
-            font-size: 12px;
-            transition: background 0.2s ease;
-        }
+    .card-content h3 {
+      margin-bottom: 10px;
+      font-size: clamp(22px, 2.2vw, 29px);
+      line-height: 1.2;
+    }
 
-        .arrow-btn:hover {
-            background: rgb(106, 106, 106);
-        }
+    .card-content p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
 
-        .recipe-details {
-            margin-top: 15px;
-            border-top: 1px dashed #ddd;
-            padding-top: 15px;
-            font-size: 14px;
-            color: #444;
-            line-height: 1.5;
-        }
+    .tag {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f1f1f1;
+      color: #333;
+      font-size: 13px;
+      font-weight: 700;
+    }
 
-        @media (max-width: 768px) {
-            header {
-                 flex-direction: column;
-                  text-align: center; 
-                }
-            .layout {
-                 flex-direction: column; 
-                }
-            aside {
-                 width: 100%; 
-                 position: static; 
-                }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      color: white;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero {
+        margin: 14px;
+      }
+
+      .layout {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1>Get Coookin</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="recipe.html">Recipes</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="layout">
-        <aside>
-            <h2>Cuisines</h2>
-            <div class="menu">
-                <a href="#">Chinese</a>
-                <a href="#">American</a>
-                <a href="#">Italian</a>
-                <a href="#">Mexican</a>
-                <a href="#">Indian</a>
-            </div>
-        </aside>
-
-        <main>
-            <div id="recipeGrid">
-                
-                <div class="card">
-                    <div class="corner-badge top-left">New</div>
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800" alt="Recipe">
-                    <div class="card-content">
-                        <h3>Pasta Recipe</h3>
-                        <p>A simple creamy pasta recipe.</p>
-                        <div class="recipe-details" style="display: none;">
-                            <p>Boil your pasta. Melt butter, heavy cream, and parmesan together, then combine.</p>
-                        </div>
-                        <button class="arrow-btn" onclick="toggleRecipe(this)">▼</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="corner-badge top-left">Popular</div>
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800" alt="Recipe">
-                    <div class="card-content">
-                        <h3>Pasta Recipe</h3>
-                        <p>A simple creamy pasta recipe.</p>
-                        <div class="recipe-details" style="display: none;">
-                            <p>Boil your pasta. Melt butter, heavy cream, and parmesan together, then combine.</p>
-                        </div>
-                        <button class="arrow-btn" onclick="toggleRecipe(this)">▼</button>
-                    </div>
-                </div>
-
-                </div>
-        </main>
+  <header>
+    <div class="logo">
+      <h1>Get Coookin</h1>
     </div>
-    <script>
-        function toggleRecipe(button) {
-            const details = button.previousElementSibling;
-            if (details.style.display === "none") {
-                details.style.display = "block";
-                button.textContent = "▲";
-            } else {
-                details.style.display = "none";
-                button.textContent = "▼";
-            }
-        }
-        </script>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipe.html">Recipes</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Cook Something Amazing</h2>
+      <p>Explore diverse recipes with clear categories, big visuals, and clickable cards that open full subpages.</p>
+    </div>
+  </section>
+
+  <div class="layout">
+    <main>
+      <h2 class="section-title">Global Recipes</h2>
+
+      <div id="recipeGrid">
+        <a class="card" href="fettuccine-alfredo.html">
+          <div class="corner-badge">Italian</div>
+          <div class="card-image"
+            style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjfR7rd7Y5pg_G1j20uv4YqhsRITum4Lqt-g&s')"></div>
+          <div class="card-content">
+            <h3>Fettuccine Alfredo</h3>
+            <p>Creamy white sauce pasta with garlic and parmesan.</p>
+            <div class="tag">Traditional comfort food</div>
+          </div>
+        </a>
+
+        <a class="card" href="chicken-wrap.html">
+          <div class="corner-badge">Fast</div>
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1529042410759-befb1204b468?w=1200')"></div>
+          <div class="card-content">
+            <h3>Chicken Wrap</h3>
+            <p>A quick wrap with chicken, veggies, and sauce.</p>
+            <div class="tag">Easy lunch idea</div>
+          </div>
+        </a>
+
+        <a class="card" href="caesar-salad.html">
+          <div class="corner-badge">Fresh</div>
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1546793665-c74683f339c1?w=1200')"></div>
+          <div class="card-content">
+            <h3>Caesar Salad</h3>
+            <p>Fresh salad with crisp lettuce and creamy dressing.</p>
+            <div class="tag">Light and healthy</div>
+          </div>
+        </a>
+
+        <a class="card" href="french-toast.html">
+          <div class="corner-badge">Breakfast</div>
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=1200')"></div>
+          <div class="card-content">
+            <h3>French Toast</h3>
+            <p>Golden breakfast toast with a sweet finish.</p>
+            <div class="tag">Morning favorite</div>
+          </div>
+        </a>
+
+        <a class="card" href="burger.html">
+          <div class="corner-badge">Classic</div>
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200')"></div>
+          <div class="card-content">
+            <h3>Classic Burger</h3>
+            <p>A juicy burger with cheese, lettuce, and sauce.</p>
+            <div class="tag">Street-style classic</div>
+          </div>
+        </a>
+
+       
+
+        <a class="card" href="pizza.slice.html">
+          <div class="corner-badge">Popular</div>
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200')"></div>
+          <div class="card-content">
+            <h3>Pizza Slice</h3>
+            <p>Cheesy slice with a crispy crust and toppings.</p>
+            <div class="tag">Party food</div>
+          </div>
+        </a>
+
+        <a class="card" href="sandwich.html">
+          <div class="corner-badge">Simple</div>
+          <div class="card-image"
+            style="background-image:url('https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1200&q=80')">
+          </div>
+          <div class="card-content">
+            <h3>Sandwich</h3>
+            <p>Simple layers for a fast and easy meal.</p>
+            <div class="tag">Quick snack</div>
+          </div>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2026 Get Coookin. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>

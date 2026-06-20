@@ -2,36 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Get Coookin</title>
     <style>
         * {
             margin: 0;
             padding: 0;
-            top:0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            background: #f8f8f8;
+            background: #f4f4f4;
             color: #333;
             line-height: 1.6;
         }
 
-        
         header {
-            background: linear-gradient(90deg, #000000, #777, white);
+            background: linear-gradient(90deg, #000, #555, #999);
             color: white;
-            padding: 15px 40px;
+            padding: 16px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+            flex-wrap: wrap;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, .15);
         }
 
         header h1 {
@@ -44,69 +43,149 @@
             margin-left: 20px;
             text-decoration: none;
             font-weight: bold;
+            transition: all 0.25s ease;
+            padding: 6px 10px;
+            border-radius: 8px;
         }
+
 
         nav a:hover {
-            text-decoration: underline;
+
+            background: rgba(255, 255, 255, 0.18);
+
+            color: white;
+
         }
 
-        
+        nav ul {
+            gap: 12px;
+        }
+
+        nav a {
+            padding: 10px;
+        }
+
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.45)), url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
-            height: 400px;
+            min-height: 360px;
+            margin: 18px;
+            border-radius: 20px;
+            overflow: hidden;
             display: flex;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            margin: 15px;
-            justify-content: center;
             align-items: center;
-            background-blend-mode:normal;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+            background:
+                linear-gradient(rgba(0, 0, 0, .45), rgba(0, 0, 0, .45)),
+                url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80");
             background-size: cover;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 16px 35px rgba(0, 0, 0, .18);
         }
 
         .hero h2 {
-            font-size: 36px;
-            padding: 15px 25px;
-            border-radius: 10px;
+            font-size: clamp(34px, 5vw, 64px);
+            margin-bottom: 12px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: clamp(17px, 2vw, 21px);
+            text-shadow: 0 3px 10px rgba(0, 0, 0, .4);
         }
 
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-            background: white;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .section h3 {
-            margin-bottom: 10px;
+        .intro {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .section,
+        .feature {
+            background: white;
+            padding: 24px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+        }
+
+        .section h3,
+        .feature h3 {
+            margin-bottom: 12px;
+            color: #222;
+            font-size: 24px;
+        }
+
+        .section p,
+        .feature p {
+            font-size: 16px;
             color: #444;
         }
 
-       
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .feature {
+            text-align: left;
+            border-top: 4px solid #222;
+        }
+
+        .feature .icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #111, #444);
+            color: white;
+            border-radius: 18px;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+        }
+
+        .cta h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #f0f0f0;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
-            background: #000000;
+            background: #000;
             color: white;
             margin-top: 40px;
         }
 
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 26px;
-            }
+        @media (max-width: 900px) {
 
+            .intro,
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 text-align: center;
@@ -115,84 +194,85 @@
             nav {
                 margin-top: 10px;
             }
+
+            .hero {
+                margin: 14px;
+                min-height: 300px;
+            }
+
+            .container {
+                padding: 16px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-   
     <header>
         <h1>Get Coookin</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="recipes.html">Recipes</a>
+            <a href="recipe.html">Recipes</a>
             <a href="about.html">About</a>
         </nav>
     </header>
 
-   
     <section class="hero">
-        <h2>About Get Coookin</h2>
+        <div>
+            <h2>About Get Coookin</h2>
+            <p>Simple recipes, clear steps, and food inspiration that make cooking feel easy for everyone.</p>
+        </div>
     </section>
 
-   
     <div class="container">
-
-        <div class="section">
-            <h3>Our Mission</h3>
-            <p>
-                At Get Coookin, we believe cooking should be simple, enjoyable, and inspiring.
-                Our goal is to bring world recipes to your kitchen in an easy and accessible way.
-            </p>
-        </div>
-
-        <div class="section">
-            <h3>What We Offer</h3>
-            <p>
-                From continental classics to global street food, we provide step-by-step recipes,
-                cooking tips, and food inspiration for all skill levels.
-            </p>
-        </div>
-
-        <div class="section">
-            <h3>Why Choose Us</h3>
-            <p>
-                We focus on clarity, simplicity, and flavor. Whether you're a beginner or a food lover,
-                our recipes are designed to help you cook with confidence.
-            </p>
-        </div>
-       
-        <div class="container">
-
+        <div class="intro">
             <div class="section">
                 <h3>Our Mission</h3>
                 <p>
                     At Get Coookin, we believe cooking should be simple, enjoyable, and inspiring.
-                    Our goal is to bring world recipes to your kitchen in an easy and accessible way.
+                    Our goal is to bring recipes to your kitchen in a way that is easy to follow and fun to make.
                 </p>
             </div>
 
             <div class="section">
-                <h3>What We Offer</h3>
+                <h3>What Makes Us Different</h3>
                 <p>
-                    From continental classics to global street food, we provide step-by-step recipes,
-                    cooking tips, and food inspiration for all skill levels.
+                    We focus on clear instructions, practical ingredients, and a clean presentation so you can
+                    cook with confidence whether you are a beginner or already love spending time in the kitchen.
                 </p>
             </div>
+        </div>
 
-            <div class="section">
-                <h3>Why Choose Us</h3>
-                <p>
-                    We focus on clarity, simplicity, and flavor. Whether you're a beginner or a food lover,
-                    our recipes are designed to help you cook with confidence.
-                </p>
+        <div class="features">
+            <div class="feature">
+                <div class="icon">🍽️</div>
+                <h3>Easy Recipes</h3>
+                <p>Step-by-step recipes that are simple to follow and easy to recreate at home.</p>
             </div>
 
+            <div class="feature">
+                <div class="icon">🌍</div>
+                <h3>Global Flavors</h3>
+                <p>Discover dishes inspired by different cuisines, from quick snacks to full meals.</p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">💡</div>
+                <h3>Helpful Tips</h3>
+                <p>Find cooking ideas and small tips that make everyday food preparation better.</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h3>Cook with Confidence</h3>
+            <p>
+                Whether you're making a quick sandwich or trying a new recipe, Get Coookin is here to keep things
+                simple, tasty, and accessible.
+            </p>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Get Coookin. All rights reserved.</p>
     </footer>
